@@ -95,7 +95,7 @@
     #end if
 
     #if "ptxqc_report" in $output_opts.output
-    && Rscript $qr $qr_yaml '$ptxqc_report'
+    && Rscript $qr $qr_yaml
         #if 'log' in $output_opts.output
             >> '$log'
         #end if
@@ -189,7 +189,7 @@
             r = createReport('./combined/txt', yaml_config)
             cat(paste0("\nReport generated as '", r\$report_file, "'\n\n"))
 
-            file.copy(r\$report_file, args[2])
+            file.copy(r\$report_file, '${ptxqc_report}')
         </configfile>
     </configfiles>
 
